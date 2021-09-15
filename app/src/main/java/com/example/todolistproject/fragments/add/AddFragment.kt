@@ -3,6 +3,7 @@ package com.example.todolistproject.fragments.add
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.*
+import android.widget.Spinner
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -30,6 +31,10 @@ class AddFragment : Fragment() {
         setHasOptionsMenu(true)
 
         val view = inflater.inflate(R.layout.fragment_add, container, false)
+
+
+        view.findViewById<Spinner>(R.id.spinner).onItemSelectedListener = mSharedViewModel.listener
+
 
         return view
     }
